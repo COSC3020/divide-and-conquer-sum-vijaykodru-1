@@ -62,3 +62,10 @@ using logarithmic functions we know that $3^(log_3(n)) = n$
 The equation becomes: $T(n) = n * T(1)$, we know that $T(1) = 1$
 
 Therefore the runtime analysis for the code is $\Theta(n)$
+
+
+References Used:
+divide-and-conquer-sum-vijaykodru 
+This is my previous repository, i was able to get a idea of how the runtime analysis can be done from looking at it
+
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice
