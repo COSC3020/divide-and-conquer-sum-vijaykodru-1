@@ -25,3 +25,40 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+
+The runtime analysis for the algorithm implemented is $\Theta(n)$.
+
+The algorithm starts by checking the number of elements in the given array. If it is $n <= 1$ then it returns either $0$ or the first element in the array. For this the runtime is always constant meaning 1. If there are more than one element in the given array then the algorithm divides the given array into three equal parts meaning 
+
+$T(n) = 3T(n/3) + 1$.
+
+$3T$ in the equation represents how many times the function is called at each iteration and the $n/3$ represents the array being divided into three parts. Asymptotically constants can be neglected. The above recurrence relation becomes:
+
+$T(1) = 1$ when $n <= 1$, $T(n) = 3T(n/3)$ when $n > 1$
+
+Solving for $T(n/3)$ by substituting $n/3$ in $T(n)$
+
+$T(n/3) = 3T(n/9)$
+
+$T(n) = 3(3T(n/9))$ 
+
+$T(n) = 9T(n/9)$
+
+The above continues until the code uses recursion, we get 
+
+$T(n) = 3^i T(n/3^i)$
+
+The recursion stops when the array size becomes 1 meaning $n/3^i = 1$
+
+if we solve for i we get $i = log_3(n)$
+
+substitute this in the above equation we get 
+
+$T(n) = 3^(log_3(n)) * T(n/3^(log_3(n)))$
+
+using logarithmic functions we know that $3^(log_3(n)) = n$
+
+The equation becomes: $T(n) = n * T(1)$, we know that $T(1) = 1$
+
+Therefore the runtime analysis for the code is $\Theta(n)$
